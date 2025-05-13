@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Start-Höhe auswählen</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 40px; background-color: #f0f0f0; }
+    select, button { font-size: 1.2em; padding: 5px 10px; }
+    #ausgabe { margin-top: 20px; font-size: 1.1em; }
+    a { color: blue; text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <h2>🛰️ Wähle eine Start-Höhe für die Simulation:</h2>
+  <select id="hoehe">
+    <option>1000</option>
+    <option>5000</option>
+    <option>10000</option>
+    <option>15000</option>
+    <option selected>20000</option>
+  </select>
+  <button onclick="zeigeErgebnis()">Simulieren</button>
+
+  <div id="ausgabe"></div>
+
+  <script>
+    function zeigeErgebnis() {
+      const hoehe = document.getElementById("hoehe").value;
+      const karte = "https://drive.google.com/file/d/1yKnnUTBDN1ZQOSeatAzcIk5EEJ6mXf2p/view?usp=drive_link";
+
+      document.getElementById("ausgabe").innerHTML = `
+        <p><strong>📋 Simulationsergebnis für ${hoehe} m:</strong></p>
+        <p>Die genaue Aufprallkarte findest du hier:<br>
+        <a href="${karte}" target="_blank">🌐 Aufprallkarte öffnen</a></p>
+      `;
+    }
+  </script>
+</body>
+</html>
